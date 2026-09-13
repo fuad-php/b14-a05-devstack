@@ -32,7 +32,7 @@ const SelectedTechnologies = ({
                 </h2>
 
                 <p className="text-sm text-base-content/70">
-                    {selectedStack.length > 0 ? selectedStack.length + "Technologies selected" : "No Technologies selected yet"}                     
+                    {selectedStack.length > 0 ? selectedStack.length + " Technologies selected" : "No Technologies selected yet"}                     
                 </p>
 
                 <div className="mt-4 space-y-2">
@@ -40,13 +40,13 @@ const SelectedTechnologies = ({
                         selectedStack.map((stack) => (
                             <div key={stack.id} className="flex items-center justify-between border border-solid border-gray-300 rounded-lg bg-base-200 p-3">
                                 <div className="flex items-center gap-2">
-                                    <img className="h-14 w-14 object-contain" src={stack.image} alt={stack.name}/>
+                                    <img className="h-14 w-14 object-contain" src={stack.icon} alt={stack.name}/>
                                     <div className="flex flex-col gap-2">
                                         <span className="font-bold">{stack.name}</span>
                                         <span className="text-gray-400">{stack.category}</span>
                                     </div>
                                 </div>
-                                <button onClick={() => removeTechnology(stack.id)} className="cursor-pointer font-bold" aria-label={`Remove ${stack.name}`}><RxCross1 /></button>
+                                <button onClick={() => removeTechnology(stack.id)} className="cursor-pointer font-bold text-xl hover:text-pink-400" aria-label={`Remove ${stack.name}`}><RxCross1 /></button>
                             </div>
                         ))
                     ) : (

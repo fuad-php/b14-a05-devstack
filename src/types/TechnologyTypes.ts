@@ -3,8 +3,8 @@ export interface ITechnology {
     "name": string
     "description": string
     "category": string
-    "level": string
+    "difficulty": string
     "rating": number
-    "image": string
-    "genre": string
+    "icon": string
+    "badge": string
 }

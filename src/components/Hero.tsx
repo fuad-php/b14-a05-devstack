@@ -13,29 +13,15 @@ const Hero = () => {
                             compare them side by side and put together the stack
                             that fits your next project.
                         </p>
-                    </div>
-
-                    {/* Buttons */}
+                    </div>                    
                     <div className="flex flex-col sm:flex-row gap-3 mt-8 w-full sm:w-auto">
-                        <button className="btn brand-gradient text-white border-0 w-full sm:w-auto">
-                            Explore Technologies
-                        </button>
-
-                        <button className="btn w-full sm:w-auto">
-                            Learn More
-                        </button>
+                        <button className="btn brand-gradient text-white border-0 w-full sm:w-auto transition-all duration-200 hover:brightness-110 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:scale-95">Explore Technologies</button>
+                        <button className="btn w-full sm:w-auto transition-all duration-200 hover:brightness-110 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:scale-95">Learn More</button>
                     </div>
-                </div>
-
-                {/* Image */}
+                </div>                
                 <div className="w-full lg:w-1/2 flex justify-center">
-                    <img
-                        src={heroImage}
-                        alt="Banner stack"
-                        className="w-full max-w-md lg:max-w-xl h-auto"
-                    />
+                    <img src={heroImage} alt="Banner stack" className="w-full max-w-md lg:max-w-xl h-auto transition-transform duration-300 hover:scale-105" />
                 </div>
-
             </div>
         </section>
     );

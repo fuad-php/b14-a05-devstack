@@ -7,6 +7,17 @@ interface ItechnologyPprops {
     technologyStacks : Promise<ITechnology[]>
 }
 
+const badgeClasses:string[] = [
+    "badge-primary",
+    "badge-secondary",
+    "badge-accent",
+    "badge-info",
+    "badge-success",
+    "badge-warning",
+    "badge-error",
+];
+
+
 const Technologies = ({technologyStacks} : ItechnologyPprops) => {
     const technologies = use(technologyStacks);
     const [selectedStack, setSelectedStack] = useState<ITechnology[]>([])
@@ -22,7 +33,7 @@ const Technologies = ({technologyStacks} : ItechnologyPprops) => {
                         {technologies.map(
                             (technology: ITechnology, index: number) => (
                                 <div key={index} className="card w-full bg-base-100 shadow-sm transition hover:shadow-md">
-                                    <TechnologyCard technology={technology} selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
+                                    <TechnologyCard technology={technology} selectedStack={selectedStack} setSelectedStack={setSelectedStack} badgeClass={badgeClasses[index%badgeClasses.length]} />
                                 </div>
                             )
                         )}
