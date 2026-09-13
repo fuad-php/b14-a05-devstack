@@ -60,7 +60,7 @@ const SelectedTechnologies = ({
                         ))
                     ) : (
                         <div className="flex items-center justify-center rounded-lg bg-base-200 p-4">
-                            <p className="text-sm text-base-content/60">
+                            <p className="text-sm text-center text-base-content/60">
                                 Your Stack is empty
                             </p>
                         </div>
