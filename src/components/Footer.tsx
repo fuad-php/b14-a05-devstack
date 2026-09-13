@@ -42,9 +42,8 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div className="divider"></div>
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-4 py-6 text-sm text-gray-400">
+                </div>                
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-4 py-6 text-sm text-gray-400 border-t">
                     <p className="text-center sm:text-left">© 2026 Dev Stack. All rights reserved.</p>
                     <div className="flex gap-4">
                         <a href="#" className="hover:text-pink-400 transition">Privacy</a>

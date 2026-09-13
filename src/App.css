@@ -1,2 +1,17 @@
 @import 'tailwindcss';
 @plugin "daisyui";
+
+@theme {
+  --color-brand-gradient-start: #f97316;
+  --color-brand-gradient-middle: #ec4899;
+  --color-brand-gradient-end: #8b5cf6;
+}
+
+@utility brand-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--color-brand-gradient-start),
+    var(--color-brand-gradient-middle),
+    var(--color-brand-gradient-end)
+  );
+}

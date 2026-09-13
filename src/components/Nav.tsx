@@ -19,19 +19,9 @@ const Nav = () => {
     }, []);
 
     return (
-        <nav
-            className={`
-                sticky top-0 z-50 w-full
-                transition-all duration-300
-                ${isScrolled ? "bg-base-100 shadow-md" : "bg-transparent"}
-            `}
-        >
+        <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-base-100 shadow-md" : "bg-transparent"}`}>
             <div className="mx-auto max-w-7xl px-4 py-4">
-                <MobileNav
-                    isMenuOpen={isMenuOpen}
-                    setIsMenuOpen={setIsMenuOpen}
-                />
-
+                <MobileNav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
                 <DesktopNav />
             </div>
         </nav>
