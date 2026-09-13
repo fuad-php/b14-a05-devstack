@@ -18,7 +18,7 @@ const SelectedTechnologies = ({
     };
 
     return (
-        <div className="card sticky top-2 w-full border border-base-300 bg-base-100 shadow-sm">
+        <div className="card w-full border border-base-300 bg-base-100 shadow-sm">
             <div className="card-body">
                 <h2 className="card-title text-2xl font-bold">
                     Your Stack
