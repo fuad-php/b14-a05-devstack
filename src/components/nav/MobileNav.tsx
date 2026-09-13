@@ -1,11 +1,12 @@
 import type { Dispatch, SetStateAction } from "react";
 import Logo from "../../assets/logo-text.png"
+import hamburger from "../../assets/hamburger.png"
 
 const MobileNav = ({isMenuOpen,setIsMenuOpen}:{isMenuOpen: boolean, setIsMenuOpen:Dispatch<SetStateAction<boolean>>}) => {
     return (
         <div className="lg:hidden">
                 <div className="flex items-center justify-between">
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-2xl">☰</button>
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-2xl"><img src={hamburger} alt="mobile hamburger" /></button>
                     <img src={Logo} alt="Logo" className="w-32 absolute left-1/2 -translate-x-1/2" />
 
                     <div className="flex items-center gap-2 ml-auto">

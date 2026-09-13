@@ -20,9 +20,11 @@ function App() {
       <Nav />
 
       <Hero />
+
       <Suspense fallback="Loading......">
         <Technologies technologyStacks = {technologyStacks} />
       </Suspense>
+      
       <Footer />
     </>
   )

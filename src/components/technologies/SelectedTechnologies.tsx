@@ -1,6 +1,7 @@
 import { RxCross1 } from "react-icons/rx";
 import type { ITechnology } from "../../types/TechnologyTypes";
 import type { Dispatch, SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 interface SelectedStackProps {
     selectedStack: ITechnology[];
@@ -15,7 +16,13 @@ const SelectedTechnologies = ({
         setSelectedStack((prev) =>
             prev.filter((stack) => stack.id !== id)
         );
+        toast.warning('Technology removed from your stack! ')
     };
+
+    const handleRemoveAll = () => {
+        setSelectedStack([])
+        toast.warning('Removed All items!')
+    } 
 
     return (
         <div className="card w-full border border-base-300 bg-base-100 shadow-sm">
@@ -31,31 +38,15 @@ const SelectedTechnologies = ({
                 <div className="mt-4 space-y-2">
                     {selectedStack.length > 0 ? (
                         selectedStack.map((stack) => (
-                            <div
-                                key={stack.id}
-                                className="flex items-center justify-between rounded-lg bg-base-200 p-3"
-                            >
-                                <div className="flex items-center gap-4">
-                                    <img
-                                        className="h-14 w-14 object-contain"
-                                        src={stack.image}
-                                        alt={stack.name}
-                                    />
-
-                                    <span className="font-semibold">
-                                        {stack.name}
-                                    </span>
+                            <div key={stack.id} className="flex items-center justify-between border border-solid border-gray-300 rounded-lg bg-base-200 p-3">
+                                <div className="flex items-center gap-2">
+                                    <img className="h-14 w-14 object-contain" src={stack.image} alt={stack.name}/>
+                                    <div className="flex flex-col gap-2">
+                                        <span className="font-bold">{stack.name}</span>
+                                        <span className="text-gray-400">{stack.category}</span>
+                                    </div>
                                 </div>
-
-                                <button
-                                    onClick={() =>
-                                        removeTechnology(stack.id)
-                                    }
-                                    className="cursor-pointer"
-                                    aria-label={`Remove ${stack.name}`}
-                                >
-                                    <RxCross1 />
-                                </button>
+                                <button onClick={() => removeTechnology(stack.id)} className="cursor-pointer font-bold" aria-label={`Remove ${stack.name}`}><RxCross1 /></button>
                             </div>
                         ))
                     ) : (
@@ -66,14 +57,9 @@ const SelectedTechnologies = ({
                         </div>
                     )}
 
-                    {selectedStack.length >= 2 && (
+                    {selectedStack.length >= 1 && (
                         <div className="flex justify-center">
-                            <button
-                                onClick={() => setSelectedStack([])}
-                                className="btn w-full rounded-xl border-2 bg-transparent text-red-600"
-                            >
-                                Remove All
-                            </button>
+                            <button onClick={handleRemoveAll} className="btn w-full rounded-xl border-2 bg-transparent text-red-600">Remove All</button>
                         </div>
                     )}
                 </div>

@@ -11,7 +11,7 @@ const Technologies = ({technologyStacks} : ItechnologyPprops) => {
     const technologies = use(technologyStacks);
     const [selectedStack, setSelectedStack] = useState<ITechnology[]>([])
     return (
-        <div className="min-h-screen bg-base-200 px-4 py-8 sm:px-6 lg:px-8">
+        <div className="min-h-screen px-4 py-8 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold sm:text-4xl">Explore the <span className="text-pink-400">Technologies</span></h1>

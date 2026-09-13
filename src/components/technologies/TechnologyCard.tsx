@@ -1,6 +1,7 @@
 import { IoStar } from "react-icons/io5";
 import type { ITechnology } from "../../types/TechnologyTypes";
 import type { Dispatch, SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 interface ITechnologyCardProps {
     technology: ITechnology;
@@ -19,8 +20,8 @@ const TechnologyCard = ({
     );
 
     const handleSetSelected = () => {
-        // Prevent duplicate technology
         if (isSelected) return;
+        toast.success('Technology added to your stack!')
 
         setSelectedStack((prev) => [...prev, technology]);
     };
