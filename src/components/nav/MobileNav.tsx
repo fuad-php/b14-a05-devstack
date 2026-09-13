@@ -5,10 +5,9 @@ import hamburger from "../../assets/hamburger.png"
 const MobileNav = ({isMenuOpen,setIsMenuOpen}:{isMenuOpen: boolean, setIsMenuOpen:Dispatch<SetStateAction<boolean>>}) => {
     return (
         <div className="lg:hidden">
-                <div className="flex items-center justify-between">
+                <div className="grid grid-cols-3 items-center justify-between">
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-2xl"><img src={hamburger} alt="mobile hamburger" /></button>
-                    <img src={Logo} alt="Logo" className="w-32 absolute left-1/2 -translate-x-1/2" />
-
+                    <img src={Logo} alt="Logo" className="w-32" />
                     <div className="flex items-center gap-2 ml-auto">
                         <button className="btn btn-sm">Sign In</button>
                         <button className="btn btn-sm bg-pink-600 text-white border-0 rounded-3xl">Sign Up</button>
@@ -18,10 +17,10 @@ const MobileNav = ({isMenuOpen,setIsMenuOpen}:{isMenuOpen: boolean, setIsMenuOpe
                 {isMenuOpen && (
                     <ul className="flex flex-col gap-4 mt-5 pt-4 border-t">
                         <li className="text-pink-600 font-semibold">Home</li>
-                        <li>Technologies</li>
-                        <li>Projects</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li className="hover:text-pink-600">Technologies</li>
+                        <li className="hover:text-pink-600">Projects</li>
+                        <li className="hover:text-pink-600">About</li>
+                        <li className="hover:text-pink-600">Contact</li>
                     </ul>
                 )}
 
