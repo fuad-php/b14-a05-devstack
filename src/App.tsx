@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import './App.css'
 import Hero from './components/Hero'
 import Nav from './components/Nav'
@@ -9,7 +10,7 @@ const technologyFetch = async():Promise<ITechnology[]> => {
      return await response.json() 
   }
 
-  const technologyPlayers = technologyFetch()
+  const technologyStacks = technologyFetch()
 
 function App() {
 
@@ -18,8 +19,9 @@ function App() {
       <Nav />
 
       <Hero />
-
-      <Technologies technologyPlayers = {technologyPlayers} />
+      <Suspense fallback="Loading......">
+        <Technologies technologyStacks = {technologyStacks} />
+      </Suspense>
     </>
   )
 }
